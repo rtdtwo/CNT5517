@@ -20,7 +20,6 @@ In the folder `part2`, you can find the following files:
 - `part2.py` : The Python application that acts as an interface between the user and the Atlas IoT framework.
 - `socket_manager.py` : Contains helper code that initiates connection with the Atlas IoT Framework. In the folder `AtlasConfiguration`, you can find the following files:
 - `Atlas_IoTDDL.xml` : The configuration XML file that is generated using the Atlas IoT Framework Builder.
-- 
 ### Running the code
 - Assuming that you have Atlas IoT framework installed and set up on your machine, copy the XML configuration file to the appropriate location.
 - Then, run the following to start Atlas IoT Framework: `./Atlas`.
