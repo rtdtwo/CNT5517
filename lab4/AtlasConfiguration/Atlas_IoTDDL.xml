@@ -1,0 +1,350 @@
+<Atlas_IoTDDL>
+    <Atlas_Thing>
+        <Descriptive_Metadata>
+            <Thing_ATID>RTX2080</Thing_ATID>
+            <Thing_Name></Thing_Name>
+            <Thing_Owner></Thing_Owner>
+            <Thing_Vendor></Thing_Vendor>
+            <Thing_Model></Thing_Model>
+            <Thing_ReleaseDate>8/2020</Thing_ReleaseDate>
+            <Thing_Type></Thing_Type>
+            <Thing_OperatingSystem></Thing_OperatingSystem>
+            <Thing_ShortDescription></Thing_ShortDescription>
+            <LongDescription></LongDescription>
+            <Thing_SSID>RTX2080Space</Thing_SSID>
+            <Space_Coordinates></Space_Coordinates>
+            <Space_Name></Space_Name>
+            <Space_Description></Space_Description>
+            <Space_Constraints>
+                <Temperature>
+                    <Lower_Bound></Lower_Bound>
+                    <Upper_Bound></Upper_Bound>
+                </Temperature>
+                <Humidity>
+                    <Lower_Bound></Lower_Bound>
+                    <Upper_Bound></Upper_Bound>
+                </Humidity>
+                <Voltage>
+                    <Lower_Bound></Lower_Bound>
+                    <Upper_Bound></Upper_Bound>
+                </Voltage>
+                <Radio_Interference_Radius></Radio_Interference_Radius>
+                <Safe_Temperature_Radius></Safe_Temperature_Radius>
+            </Space_Constraints>
+        </Descriptive_Metadata>
+        <Administrative_Metadata>
+            <Network_Manager>
+                <Module></Module>
+                <Type></Type>
+                <Network_Name>Kenobi</Network_Name>
+                <Network_Passcode>coruscant</Network_Passcode>
+                <MulticastGroup>
+                    <IP>232.1.1.1</IP>
+                    <Port>1235</Port>
+                </MulticastGroup>
+                <Communication_Protocol></Communication_Protocol>
+                <InterOperableCommunication>
+                    <Broker>
+                        <Vendor>HiveMQ</Vendor>
+                        <Dashboard>http://www.mqtt-dashboard.com/</Dashboard>
+                        <IP>broker.hivemq.com</IP>
+                        <Port>1883</Port>
+                    </Broker>
+                    <Topic>
+                        <Root>/Atlas</Root>
+                        <Network_MQTTClient>/Network/MQTT_Client</Network_MQTTClient>
+                        <Network_PrivateBroker>/Network/Private_Broker</Network_PrivateBroker>
+                        <Multicast_ThingIdentity>/Multicast/Tweet_ThingIdentity</Multicast_ThingIdentity>
+                        <Multicast_EntityIdentity>/Multicast/Tweet_EntityIdentity</Multicast_EntityIdentity>
+                        <Multicast_API>/Multicast/API</Multicast_API>
+                        <Unicast>/Unicast/Interaction</Unicast>
+                    </Topic>
+                </InterOperableCommunication>
+                <OMA_DM>
+                    <AccessName>Eclipse Leshan</AccessName>
+                    <IP>coap://leshan.eclipseprojects.io</IP>
+                    <Port>5683</Port>
+                </OMA_DM>
+            </Network_Manager>
+            <Memory_Manager>
+                <Store_Format></Store_Format>
+                <MemoryUnit_Application></MemoryUnit_Application>
+                <MemoryUnit_Knowledge></MemoryUnit_Knowledge>
+            </Memory_Manager>
+        </Administrative_Metadata>
+        <Thing_Attachment>
+
+		</Thing_Attachment>
+        <Structural_Metadata>
+            <Number_Hardware>1</Number_Hardware>
+            <Number_Software>0</Number_Software>
+            <Number_Hybrid>0</Number_Hybrid>
+            <Number_Entities>4</Number_Entities>
+        </Structural_Metadata>
+    </Atlas_Thing>
+    <Atlas_Entities>
+        <Entity_1>
+            <Descriptive_Metadata>
+                <ID>LED</ID>
+                <Name>LED</Name>
+                <Owner></Owner>
+                <Vendor></Vendor>
+                <Category></Category>
+                <Type></Type>
+                <Description>LED Thing</Description>
+            </Descriptive_Metadata>
+            <Services>
+                <Service_1>
+                    <Name>TurnOnLED</Name>
+                    <AppCategory>Lighting</AppCategory>
+                    <Type>Action</Type>
+                    <Keywords>turn_on_led</Keywords>
+                    <Description>Turn on the LED</Description>
+                    <Contextual_Constraints>
+                        <Time_Window>5seconds</Time_Window>
+                        <Usage_Mode>Single</Usage_Mode>
+                        <Concurrent>No</Concurrent>
+                    </Contextual_Constraints>
+                    <Temporal_Constraints>
+                        <Working>
+                            <StartTime>12am</StartTime>
+                            <EndTime>11:59pm</EndTime>
+                        </Working>
+                        <Callable>
+                            <StartTime>12am</StartTime>
+                            <EndTime>11:59pm</EndTime>
+                        </Callable>
+                    </Temporal_Constraints>
+                    <OutputDescription></OutputDescription>
+                    <OutputType>void</OutputType>
+                    <Service_Formula>
+                        <![CDATA[
+wiringPiSetupGpio();
+pinMode(4, OUTPUT);
+digitalWrite(4, HIGH);
+]]>
+                    </Service_Formula>
+                    <Service_NumberInputs>0</Service_NumberInputs>
+                    <Service_InputTypes>null</Service_InputTypes>
+                    <Service_InputDescriptions>""</Service_InputDescriptions>
+                </Service_1>
+                <Service_2>
+                    <Name>TurnOffLED</Name>
+                    <AppCategory>Lighting</AppCategory>
+                    <Type>Action</Type>
+                    <Keywords>turn_off_led</Keywords>
+                    <Description>Turn off the LED</Description>
+                    <Contextual_Constraints>
+                        <Time_Window>5seconds</Time_Window>
+                        <Usage_Mode>Single</Usage_Mode>
+                        <Concurrent>No</Concurrent>
+                    </Contextual_Constraints>
+                    <Temporal_Constraints>
+                        <Working>
+                            <StartTime>12am</StartTime>
+                            <EndTime>11:59pm</EndTime>
+                        </Working>
+                        <Callable>
+                            <StartTime>12am</StartTime>
+                            <EndTime>11:59pm</EndTime>
+                        </Callable>
+                    </Temporal_Constraints>
+                    <OutputDescription></OutputDescription>
+                    <OutputType>void</OutputType>
+                    <Service_Formula>
+                        <![CDATA[
+wiringPiSetupGpio();
+pinMode(4, OUTPUT);
+digitalWrite(4, LOW);
+]]>
+                    </Service_Formula>
+                    <Service_NumberInputs>0</Service_NumberInputs>
+                    <Service_InputTypes>null</Service_InputTypes>
+                    <Service_InputDescriptions>""</Service_InputDescriptions>
+                </Service_2>
+                <Number_Services>2</Number_Services>
+            </Services>
+            <UnboundedService>
+                <Number_UnboundedServices>0</Number_UnboundedServices>
+            </UnboundedService>
+            <Relationships>
+                <Number_Relationships>0</Number_Relationships>
+            </Relationships>
+        </Entity_1>
+        <Entity_2>
+            <Descriptive_Metadata>
+                <ID>SMS</ID>
+                <Name>SoilMoistureSensor</Name>
+                <Owner></Owner>
+                <Vendor></Vendor>
+                <Category></Category>
+                <Type></Type>
+                <Description>Soil Moisture Sensor</Description>
+            </Descriptive_Metadata>
+            <Services>
+                <Service_1>
+                    <Name>SMSStatus</Name>
+                    <AppCategory>Environment Monitor</AppCategory>
+                    <Type>Report</Type>
+                    <Keywords>sms_status</Keywords>
+                    <Description>Get status of the soil moisture sensor</Description>
+                    <Contextual_Constraints>
+                        <Time_Window>5seconds</Time_Window>
+                        <Usage_Mode>Single</Usage_Mode>
+                        <Concurrent>No</Concurrent>
+                    </Contextual_Constraints>
+                    <Temporal_Constraints>
+                        <Working>
+                            <StartTime>12am</StartTime>
+                            <EndTime>11:59pm</EndTime>
+                        </Working>
+                        <Callable>
+                            <StartTime>12am</StartTime>
+                            <EndTime>11:59pm</EndTime>
+                        </Callable>
+                    </Temporal_Constraints>
+                    <OutputDescription>status</OutputDescription>
+                    <OutputType>int</OutputType>
+                    <Service_Formula>
+                        <![CDATA[
+wiringPiSetupGpio();
+pinMode(21, INPUT);
+if(digitalRead(21) == HIGH) {
+    status = 0;
+} else {
+    status = 1;
+}
+]]>
+                    </Service_Formula>
+                    <Service_NumberInputs>0</Service_NumberInputs>
+                    <Service_InputTypes></Service_InputTypes>
+                    <Service_InputDescriptions>""</Service_InputDescriptions>
+                </Service_1>
+                <Number_Services>1</Number_Services>
+            </Services>
+            <UnboundedService>
+                <Number_UnboundedServices>0</Number_UnboundedServices>
+            </UnboundedService>
+            <Relationships>
+                <Number_Relationships>0</Number_Relationships>
+            </Relationships>
+        </Entity_2>
+        <Entity_3>
+            <Descriptive_Metadata>
+                <ID>BTN</ID>
+                <Name>Button</Name>
+                <Owner></Owner>
+                <Vendor></Vendor>
+                <Category></Category>
+                <Type></Type>
+                <Description>Pushbutton</Description>
+            </Descriptive_Metadata>
+            <Services>
+                <Service_1>
+                    <Name>BTNStatus</Name>
+                    <AppCategory>Environment Monitor</AppCategory>
+                    <Type>Report</Type>
+                    <Keywords>btn_status</Keywords>
+                    <Description>Get status of pushbutton i.e. whether pressed or not</Description>
+                    <Contextual_Constraints>
+                        <Time_Window>5seconds</Time_Window>
+                        <Usage_Mode>Single</Usage_Mode>
+                        <Concurrent>No</Concurrent>
+                    </Contextual_Constraints>
+                    <Temporal_Constraints>
+                        <Working>
+                            <StartTime>12am</StartTime>
+                            <EndTime>11:59pm</EndTime>
+                        </Working>
+                        <Callable>
+                            <StartTime>12am</StartTime>
+                            <EndTime>11:59pm</EndTime>
+                        </Callable>
+                    </Temporal_Constraints>
+                    <OutputDescription>status</OutputDescription>
+                    <OutputType>int</OutputType>
+                    <Service_Formula>
+                        <![CDATA[
+wiringPiSetupGpio();
+pinMode(23, INPUT);
+if(digitalRead(23) == HIGH) {
+    status = 0;
+} else {
+    status = 1;
+}
+]]>
+                    </Service_Formula>
+                    <Service_NumberInputs>0</Service_NumberInputs>
+                    <Service_InputTypes>null</Service_InputTypes>
+                    <Service_InputDescriptions>""</Service_InputDescriptions>
+                </Service_1>
+                <Number_Services>1</Number_Services>
+            </Services>
+            <UnboundedService>
+                <Number_UnboundedServices>0</Number_UnboundedServices>
+            </UnboundedService>
+            <Relationships>
+                <Number_Relationships>0</Number_Relationships>
+            </Relationships>
+        </Entity_3>
+        <Entity_4>
+            <Descriptive_Metadata>
+                <ID>BUZZ</ID>
+                <Name>Buzzer</Name>
+                <Owner></Owner>
+                <Vendor></Vendor>
+                <Category>Hardware</Category>
+                <Type></Type>
+                <Description>Active Buzzer</Description>
+            </Descriptive_Metadata>
+            <Services>
+                <Service_1>
+                    <Name>BeepBuzzer</Name>
+                    <AppCategory>Entertainment</AppCategory>
+                    <Type>Action</Type>
+                    <Keywords>beep_buzzer</Keywords>
+                    <Description>Beep the buzzer thrice</Description>
+                    <Contextual_Constraints>
+                        <Time_Window>10seconds</Time_Window>
+                        <Usage_Mode>Single</Usage_Mode>
+                        <Concurrent>No</Concurrent>
+                    </Contextual_Constraints>
+                    <Temporal_Constraints>
+                        <Working>
+                            <StartTime>12am</StartTime>
+                            <EndTime>11:59pm</EndTime>
+                        </Working>
+                        <Callable>
+                            <StartTime>12am</StartTime>
+                            <EndTime>11:59pm</EndTime>
+                        </Callable>
+                    </Temporal_Constraints>
+                    <OutputDescription></OutputDescription>
+                    <OutputType>void</OutputType>
+                    <Service_Formula>
+                        <![CDATA[
+wiringPiSetupGpio();
+pinMode(16, OUTPUT);
+for(int i=0; i<count; i++){
+    digitalWrite(16, HIGH);
+    delay(100);
+    digitalWrite(16, LOW);
+    delay(100);
+}
+]]>
+                    </Service_Formula>
+                    <Service_NumberInputs>1</Service_NumberInputs>
+                    <Service_InputTypes>int</Service_InputTypes>
+                    <Service_InputDescriptions>"count"</Service_InputDescriptions>
+                </Service_1>
+                <Number_Services>1</Number_Services>
+            </Services>
+            <UnboundedService>
+                <Number_UnboundedServices>0</Number_UnboundedServices>
+            </UnboundedService>
+            <Relationships>
+                <Number_Relationships>0</Number_Relationships>
+            </Relationships>
+        </Entity_4>
+    </Atlas_Entities>
+</Atlas_IoTDDL>
