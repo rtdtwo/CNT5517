@@ -1,4 +1,4 @@
-# Lab 3
+# Lab 3 - Metronome Thing Implementation Using Raspberry Pi
 
 ## Server setup
 1. In the folder part1, there is a file called `app.py`. This is the HTTP REST server. This also holds a `bl.py`.
